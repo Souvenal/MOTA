@@ -1,0 +1,22 @@
+{
+	"BUILD_DIR" : "/Users/mac/Developer/Qt_Projects/MOTA/build/Qt_6_8_0_for_macOS-Debug/MOTA_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/mac/Developer/Qt_Projects/MOTA/build/Qt_6_8_0_for_macOS-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/mac/Developer/Qt_Projects/MOTA/build/Qt_6_8_0_for_macOS-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/mac/Developer/Qt_Projects/MOTA",
+	"CMAKE_SOURCE_DIR" : "/Users/mac/Developer/Qt_Projects/MOTA",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/Users/mac/Developer/Qt_Projects/MOTA/build/Qt_6_8_0_for_macOS-Debug/MOTA_autogen/include",
+	"INPUTS" : [ "/Users/mac/Developer/Qt_Projects/MOTA/assets/brick-wall.svg" ],
+	"LOCK_FILE" : "/Users/mac/Developer/Qt_Projects/MOTA/build/Qt_6_8_0_for_macOS-Debug/CMakeFiles/MOTA_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/Users/mac/Applications/Qt/6.8.0/macos/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/Users/mac/Developer/Qt_Projects/MOTA/build/Qt_6_8_0_for_macOS-Debug/CMakeFiles/MOTA_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/Users/mac/Developer/Qt_Projects/MOTA/resources.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}
