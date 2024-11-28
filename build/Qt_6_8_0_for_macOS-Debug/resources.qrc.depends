@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/assets">
-        <file>images/brick-wall.svg</file>
-        <file>images/swordman.svg</file>
-    </qresource>
-</RCC>

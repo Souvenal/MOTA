@@ -1,4 +1,0 @@
-# Hashes of file build rules.
-fb3deaa2d64d1ebd1dc034e031c0dd07 /Users/mac/Developer/Qt_Projects/MOTA/MOTA_zh_CN.ts
-4e6df920f089be96a9d4b91ce272270d CMakeFiles/MOTA_autogen
-d3d4d141f20e97be9594a566a988ea39 MOTA_autogen/timestamp

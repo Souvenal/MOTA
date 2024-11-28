@@ -1,8 +1,0 @@
-/Users/mac/Developer/Qt_Projects/MOTA/build/CMakeFiles/MOTA.dir
-/Users/mac/Developer/Qt_Projects/MOTA/build/CMakeFiles/edit_cache.dir
-/Users/mac/Developer/Qt_Projects/MOTA/build/CMakeFiles/rebuild_cache.dir
-/Users/mac/Developer/Qt_Projects/MOTA/build/CMakeFiles/list_install_components.dir
-/Users/mac/Developer/Qt_Projects/MOTA/build/CMakeFiles/install.dir
-/Users/mac/Developer/Qt_Projects/MOTA/build/CMakeFiles/install/local.dir
-/Users/mac/Developer/Qt_Projects/MOTA/build/CMakeFiles/install/strip.dir
-/Users/mac/Developer/Qt_Projects/MOTA/build/CMakeFiles/MOTA_autogen.dir
