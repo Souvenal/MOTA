@@ -81,14 +81,6 @@ build CMakeFiles/MOTA.dir/src/component/collider.cpp.o: CXX_COMPILER__MOTA_unsca
   OBJECT_DIR = CMakeFiles/MOTA.dir
   OBJECT_FILE_DIR = CMakeFiles/MOTA.dir/src/component
 
-build CMakeFiles/MOTA.dir/src/component/component.cpp.o: CXX_COMPILER__MOTA_unscanned_Debug /Users/mac/Developer/Qt_Projects/MOTA/src/component/component.cpp || cmake_object_order_depends_target_MOTA
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SVGWIDGETS_LIB -DQT_SVG_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/MOTA.dir/src/component/component.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/mac/Developer/Qt_Projects/MOTA/build/Qt_6_8_0_for_macOS-Debug/MOTA_autogen/include -I/Users/mac/Developer/Qt_Projects/MOTA/include -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtCore.framework/Headers -iframework /Users/mac/Applications/Qt/6.8.0/macos/lib -isystem /Users/mac/Applications/Qt/6.8.0/macos/mkspecs/macx-clang -isystem /Users/mac/Applications/Qt/6.8.0/macos/include -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtGui.framework/Headers -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtSvg.framework/Headers -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtSvgWidgets.framework/Headers
-  OBJECT_DIR = CMakeFiles/MOTA.dir
-  OBJECT_FILE_DIR = CMakeFiles/MOTA.dir/src/component
-
 build CMakeFiles/MOTA.dir/src/component/renderer.cpp.o: CXX_COMPILER__MOTA_unscanned_Debug /Users/mac/Developer/Qt_Projects/MOTA/src/component/renderer.cpp || cmake_object_order_depends_target_MOTA
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SVGWIDGETS_LIB -DQT_SVG_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/MOTA.dir/src/component/renderer.cpp.o.d
@@ -129,9 +121,9 @@ build CMakeFiles/MOTA.dir/src/cordinate.cpp.o: CXX_COMPILER__MOTA_unscanned_Debu
   OBJECT_DIR = CMakeFiles/MOTA.dir
   OBJECT_FILE_DIR = CMakeFiles/MOTA.dir/src
 
-build CMakeFiles/MOTA.dir/src/gameobject/gameobject.cpp.o: CXX_COMPILER__MOTA_unscanned_Debug /Users/mac/Developer/Qt_Projects/MOTA/src/gameobject/gameobject.cpp || cmake_object_order_depends_target_MOTA
+build CMakeFiles/MOTA.dir/src/gameobject/gameobject_impl.cpp.o: CXX_COMPILER__MOTA_unscanned_Debug /Users/mac/Developer/Qt_Projects/MOTA/src/gameobject/gameobject_impl.cpp || cmake_object_order_depends_target_MOTA
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SVGWIDGETS_LIB -DQT_SVG_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/MOTA.dir/src/gameobject/gameobject.cpp.o.d
+  DEP_FILE = CMakeFiles/MOTA.dir/src/gameobject/gameobject_impl.cpp.o.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mac/Developer/Qt_Projects/MOTA/build/Qt_6_8_0_for_macOS-Debug/MOTA_autogen/include -I/Users/mac/Developer/Qt_Projects/MOTA/include -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtCore.framework/Headers -iframework /Users/mac/Applications/Qt/6.8.0/macos/lib -isystem /Users/mac/Applications/Qt/6.8.0/macos/mkspecs/macx-clang -isystem /Users/mac/Applications/Qt/6.8.0/macos/include -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtGui.framework/Headers -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtSvg.framework/Headers -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtSvgWidgets.framework/Headers
   OBJECT_DIR = CMakeFiles/MOTA.dir
@@ -185,9 +177,9 @@ build CMakeFiles/MOTA.dir/src/map.cpp.o: CXX_COMPILER__MOTA_unscanned_Debug /Use
   OBJECT_DIR = CMakeFiles/MOTA.dir
   OBJECT_FILE_DIR = CMakeFiles/MOTA.dir/src
 
-build CMakeFiles/MOTA.dir/src/physics.cpp.o: CXX_COMPILER__MOTA_unscanned_Debug /Users/mac/Developer/Qt_Projects/MOTA/src/physics.cpp || cmake_object_order_depends_target_MOTA
+build CMakeFiles/MOTA.dir/src/physicssystem.cpp.o: CXX_COMPILER__MOTA_unscanned_Debug /Users/mac/Developer/Qt_Projects/MOTA/src/physicssystem.cpp || cmake_object_order_depends_target_MOTA
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SVGWIDGETS_LIB -DQT_SVG_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/MOTA.dir/src/physics.cpp.o.d
+  DEP_FILE = CMakeFiles/MOTA.dir/src/physicssystem.cpp.o.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/mac/Developer/Qt_Projects/MOTA/build/Qt_6_8_0_for_macOS-Debug/MOTA_autogen/include -I/Users/mac/Developer/Qt_Projects/MOTA/include -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtCore.framework/Headers -iframework /Users/mac/Applications/Qt/6.8.0/macos/lib -isystem /Users/mac/Applications/Qt/6.8.0/macos/mkspecs/macx-clang -isystem /Users/mac/Applications/Qt/6.8.0/macos/include -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtWidgets.framework/Headers -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtGui.framework/Headers -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtSvg.framework/Headers -isystem /Users/mac/Applications/Qt/6.8.0/macos/lib/QtSvgWidgets.framework/Headers
   OBJECT_DIR = CMakeFiles/MOTA.dir
@@ -233,7 +225,7 @@ build CMakeFiles/MOTA.dir/qrc_resources.cpp.o: CXX_COMPILER__MOTA_unscanned_Debu
 #############################################
 # Link the executable MOTA.app/Contents/MacOS/MOTA
 
-build MOTA.app/Contents/MacOS/MOTA: CXX_EXECUTABLE_LINKER__MOTA_Debug CMakeFiles/MOTA.dir/MOTA_autogen/mocs_compilation.cpp.o CMakeFiles/MOTA.dir/src/behaviour.cpp.o CMakeFiles/MOTA.dir/src/component/boxcollider.cpp.o CMakeFiles/MOTA.dir/src/component/collider.cpp.o CMakeFiles/MOTA.dir/src/component/component.cpp.o CMakeFiles/MOTA.dir/src/component/renderer.cpp.o CMakeFiles/MOTA.dir/src/component/rigidbody.cpp.o CMakeFiles/MOTA.dir/src/component/svgrenderer.cpp.o CMakeFiles/MOTA.dir/src/component/transform.cpp.o CMakeFiles/MOTA.dir/src/cordinate.cpp.o CMakeFiles/MOTA.dir/src/gameobject/gameobject.cpp.o CMakeFiles/MOTA.dir/src/gameobject/wall.cpp.o CMakeFiles/MOTA.dir/src/gameobject/warrior.cpp.o CMakeFiles/MOTA.dir/src/input.cpp.o CMakeFiles/MOTA.dir/src/main.cpp.o CMakeFiles/MOTA.dir/src/mainwindow.cpp.o CMakeFiles/MOTA.dir/src/map.cpp.o CMakeFiles/MOTA.dir/src/physics.cpp.o CMakeFiles/MOTA.dir/src/scene.cpp.o CMakeFiles/MOTA.dir/src/timemanager.cpp.o CMakeFiles/MOTA.dir/src/vector2d.cpp.o CMakeFiles/MOTA.dir/qrc_resources.cpp.o | /Users/mac/Applications/Qt/6.8.0/macos/lib/QtSvgWidgets.framework/Versions/A/QtSvgWidgets /Users/mac/Applications/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/QtWidgets /Users/mac/Applications/Qt/6.8.0/macos/lib/QtSvg.framework/Versions/A/QtSvg /Users/mac/Applications/Qt/6.8.0/macos/lib/QtGui.framework/Versions/A/QtGui /Users/mac/Applications/Qt/6.8.0/macos/lib/QtCore.framework/Versions/A/QtCore || MOTA_autogen MOTA_autogen_timestamp_deps
+build MOTA.app/Contents/MacOS/MOTA: CXX_EXECUTABLE_LINKER__MOTA_Debug CMakeFiles/MOTA.dir/MOTA_autogen/mocs_compilation.cpp.o CMakeFiles/MOTA.dir/src/behaviour.cpp.o CMakeFiles/MOTA.dir/src/component/boxcollider.cpp.o CMakeFiles/MOTA.dir/src/component/collider.cpp.o CMakeFiles/MOTA.dir/src/component/renderer.cpp.o CMakeFiles/MOTA.dir/src/component/rigidbody.cpp.o CMakeFiles/MOTA.dir/src/component/svgrenderer.cpp.o CMakeFiles/MOTA.dir/src/component/transform.cpp.o CMakeFiles/MOTA.dir/src/cordinate.cpp.o CMakeFiles/MOTA.dir/src/gameobject/gameobject_impl.cpp.o CMakeFiles/MOTA.dir/src/gameobject/wall.cpp.o CMakeFiles/MOTA.dir/src/gameobject/warrior.cpp.o CMakeFiles/MOTA.dir/src/input.cpp.o CMakeFiles/MOTA.dir/src/main.cpp.o CMakeFiles/MOTA.dir/src/mainwindow.cpp.o CMakeFiles/MOTA.dir/src/map.cpp.o CMakeFiles/MOTA.dir/src/physicssystem.cpp.o CMakeFiles/MOTA.dir/src/scene.cpp.o CMakeFiles/MOTA.dir/src/timemanager.cpp.o CMakeFiles/MOTA.dir/src/vector2d.cpp.o CMakeFiles/MOTA.dir/qrc_resources.cpp.o | /Users/mac/Applications/Qt/6.8.0/macos/lib/QtSvgWidgets.framework/Versions/A/QtSvgWidgets /Users/mac/Applications/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/QtWidgets /Users/mac/Applications/Qt/6.8.0/macos/lib/QtSvg.framework/Versions/A/QtSvg /Users/mac/Applications/Qt/6.8.0/macos/lib/QtGui.framework/Versions/A/QtGui /Users/mac/Applications/Qt/6.8.0/macos/lib/QtCore.framework/Versions/A/QtCore || MOTA_autogen MOTA_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk
   LINK_LIBRARIES = -Wl,-rpath,/Users/mac/Applications/Qt/6.8.0/macos/lib  /Users/mac/Applications/Qt/6.8.0/macos/lib/QtSvgWidgets.framework/Versions/A/QtSvgWidgets  /Users/mac/Applications/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/QtWidgets  /Users/mac/Applications/Qt/6.8.0/macos/lib/QtSvg.framework/Versions/A/QtSvg  /Users/mac/Applications/Qt/6.8.0/macos/lib/QtGui.framework/Versions/A/QtGui  -framework OpenGL  -framework AGL  -framework AppKit  -framework ImageIO  -framework Metal  /Users/mac/Applications/Qt/6.8.0/macos/lib/QtCore.framework/Versions/A/QtCore  -framework IOKit  -framework DiskArbitration  -framework UniformTypeIdentifiers
   LINK_PATH = -F/Users/mac/Applications/Qt/6.8.0/macos/lib

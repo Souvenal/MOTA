@@ -9,9 +9,10 @@
 
 void RegisterAllComponents() {
     ComponentFactory &factory = ComponentFactory::GetComponentFactory();
+
     factory.RegisterComponent<Transform>();
+    factory.RegisterComponent<BoxCollider>();
     factory.RegisterComponent<SvgRenderer, QString>();
-    factory.RegisterComponent<Collider>();
 }
 
 

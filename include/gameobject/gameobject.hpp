@@ -8,7 +8,8 @@
 
 class Component;
 
-class GameObject_Interface
+// interface class
+class GameObject
 {
 protected:
     std::unordered_map<std::type_index, Component *> components;
@@ -17,17 +18,22 @@ public:
     template<typename T, typename... Args>
     T* AddComponent(Args&&... args);
 
-
     virtual Component* GetComponentByType(std::type_index &type) = 0;
 
     template<typename T>
     T* GetComponent();
+
+    virtual void Start() = 0;
+    virtual void Update() = 0;
+
+    GameObject() = default;
+    virtual ~GameObject() {}
 };
 
 
 
 template<typename T, typename... Args>
-T* GameObject_Interface::AddComponent(Args&&... args)
+T* GameObject::AddComponent(Args&&... args)
 {
     T* component = ComponentFactory::GetComponentFactory()
         .Create<T>(this, std::forward<Args>(args)...);
@@ -37,7 +43,7 @@ T* GameObject_Interface::AddComponent(Args&&... args)
 
 
 template<typename T>
-T* GameObject_Interface::GetComponent()
+T* GameObject::GetComponent()
 {
     std::type_index type = std::type_index(typeid(T));
     Component *component = GetComponentByType(type);

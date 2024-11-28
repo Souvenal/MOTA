@@ -293,8 +293,9 @@
   /Users/mac/Applications/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsexports.h \
   /Users/mac/Applications/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h \
   /Users/mac/Applications/Qt/6.8.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h \
+  /Users/mac/Developer/Qt_Projects/MOTA/include/component/boxcollider.h \
   /Users/mac/Developer/Qt_Projects/MOTA/include/component/collider.h \
-  /Users/mac/Developer/Qt_Projects/MOTA/include/component/component.h \
+  /Users/mac/Developer/Qt_Projects/MOTA/include/component/component.hpp \
   /Users/mac/Developer/Qt_Projects/MOTA/include/component/componentfactory.hpp \
   /Users/mac/Developer/Qt_Projects/MOTA/include/component/components.h \
   /Users/mac/Developer/Qt_Projects/MOTA/include/component/renderer.h \
@@ -302,12 +303,12 @@
   /Users/mac/Developer/Qt_Projects/MOTA/include/component/svgrenderer.h \
   /Users/mac/Developer/Qt_Projects/MOTA/include/component/transform.h \
   /Users/mac/Developer/Qt_Projects/MOTA/include/cordinate.h \
-  /Users/mac/Developer/Qt_Projects/MOTA/include/gameobject/gameobject.h \
-  /Users/mac/Developer/Qt_Projects/MOTA/include/gameobject/gameobject_interface.hpp \
+  /Users/mac/Developer/Qt_Projects/MOTA/include/gameobject/gameobject.hpp \
+  /Users/mac/Developer/Qt_Projects/MOTA/include/gameobject/gameobject_impl.h \
   /Users/mac/Developer/Qt_Projects/MOTA/include/global.h \
   /Users/mac/Developer/Qt_Projects/MOTA/include/input.h \
   /Users/mac/Developer/Qt_Projects/MOTA/include/map.h \
-  /Users/mac/Developer/Qt_Projects/MOTA/include/physics.h \
+  /Users/mac/Developer/Qt_Projects/MOTA/include/physicssystem.h \
   /Users/mac/Developer/Qt_Projects/MOTA/include/scene.h \
   /Users/mac/Developer/Qt_Projects/MOTA/include/timemanager.h \
   /Users/mac/Developer/Qt_Projects/MOTA/include/vector2d.h

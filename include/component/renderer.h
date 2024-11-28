@@ -18,7 +18,7 @@ protected:
     Transform *transform;
 
 public:
-    Renderer(GameObject_Interface *owner);
+    Renderer(GameObject *owner);
 
     void SetEnabled(bool isEnabled);
     bool IsEnabled() const;

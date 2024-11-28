@@ -4,7 +4,7 @@
 #include <typeindex>
 #include <unordered_map>
 
-#include "gameobject/gameobject_interface.hpp"
+#include "gameobject/gameobject.hpp"
 
 #define BAN_DEFAULT_CONSTURCTOR(Component) \
     Component() = delete;\
@@ -18,10 +18,19 @@ class Component
     BAN_DEFAULT_CONSTURCTOR(Component)
 
 protected:
-    GameObject_Interface *owner;
+    GameObject *owner;
+
+    template <typename T>
+    T* GetComponent()
+    {
+        return owner->GetComponent<T>();
+    }
+
 public:
 
-    Component(GameObject_Interface *owner);
+    Component(GameObject *owner):
+        owner(owner)
+    {}
 
     virtual ~Component() = default;
 };

@@ -1,6 +1,6 @@
 #include "component/svgrenderer.h"
 
-SvgRenderer::SvgRenderer(GameObject_Interface *owner, const QString &svg):
+SvgRenderer::SvgRenderer(GameObject *owner, const QString &svg):
     Renderer(owner), svg(svg)
 {
     renderer = new QSvgRenderer;

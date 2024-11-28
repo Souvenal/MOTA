@@ -1,9 +1,9 @@
 #include "component/renderer.h"
 
-Renderer::Renderer(GameObject_Interface *owner):
+Renderer::Renderer(GameObject *owner):
     Component(owner), enabled(true), visible(true)
 {
-    transform = owner->GetComponent<Transform>();
+    transform = GetComponent<Transform>();
 }
 
 void Renderer::SetEnabled(bool isEnabled) { enabled = isEnabled; }

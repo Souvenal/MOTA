@@ -5,7 +5,8 @@
 
 #include "component/svgrenderer.h"
 
-#include "component/collider.h"
+#include "component/boxcollider.h"
+
 #include "component/rigidbody.h"
 
 

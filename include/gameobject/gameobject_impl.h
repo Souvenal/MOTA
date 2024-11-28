@@ -7,22 +7,19 @@
 
 #include "input.h"
 #include "component/transform.h"
-#include "gameobject_interface.hpp"
+#include "gameobject/gameobject.hpp"
 
-class GameObject : public GameObject_Interface
+class GameObject_Impl : public GameObject
 {
 private:
     Component* GetComponentByType(std::type_index &type) override;
 
 public:
-    GameObject();
-    virtual ~GameObject();
+    GameObject_Impl();
+    ~GameObject_Impl();
 
 public:
     Transform *transform;
-
-    virtual void Start() = 0;
-    virtual void Update() = 0;
 
 };
 

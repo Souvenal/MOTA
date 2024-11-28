@@ -1,15 +1,11 @@
 #include "component/collider.h"
 
-Collider::Collider(GameObject_Interface *owner):
+Collider::Collider(GameObject *owner):
     Component(owner)
 {
-    transform = owner->GetComponent<Transform>();
+    transform = GetComponent<Transform>();
 }
 
-bool Collider::IsColliding(const Collider &other) const
-{
-
-}
 
 void Collider::OnCollisionEnter(const Collider &other)
 {

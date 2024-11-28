@@ -1,11 +1,11 @@
 #ifndef WARRIOR_H
 #define WARRIOR_H
 
-#include "gameobject/gameobject.h"
+#include "gameobject/gameobject_impl.h"
 #include "component/collider.h"
 #include "component/svgrenderer.h"
 
-class Warrior : public GameObject
+class Warrior : public GameObject_Impl
 {
 protected:
     Collider *collider;

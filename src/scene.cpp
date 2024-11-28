@@ -1,6 +1,6 @@
 #include "scene.h"
 
-#include "gameobject/gameobject.h"
+#include "gameobject/gameobject_impl.h"
 
 Scene::Scene() {}
 
@@ -13,6 +13,19 @@ Scene::~Scene()
 void Scene::AddGameObject(GameObject *gameObject)
 {
     gameObjects.emplace_back(gameObject);
+}
+
+void Scene::RemoveGameobject(GameObject *gameObject)
+{
+    gameObjects.erase(
+        std::remove(gameObjects.begin(), gameObjects.end(), gameObject),
+        gameObjects.end()
+    );
+}
+
+void Scene::FixedUpdate()
+{
+    physicsSystem.FixedUpdate(gameObjects);
 }
 
 

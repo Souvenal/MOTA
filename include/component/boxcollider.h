@@ -1,10 +1,16 @@
 #ifndef BOXCOLLIDER_H
 #define BOXCOLLIDER_H
 
-class BoxCollider
+#include "component/collider.h"
+
+class BoxCollider : public Collider
 {
+    BAN_DEFAULT_CONSTURCTOR(BoxCollider)
+
 public:
-    BoxCollider();
+    BoxCollider(GameObject* owner);
+
+    bool CheckCollision(const Collider *other) const override;
 };
 
 #endif // BOXCOLLIDER_H

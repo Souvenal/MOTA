@@ -15,7 +15,7 @@ private:
     QSvgRenderer* renderer;
 
 public:
-    SvgRenderer(GameObject_Interface *owner, const QString &svg);
+    SvgRenderer(GameObject *owner, const QString &svg);
     ~SvgRenderer();
 
     void Render(QPainter *painter) const override;

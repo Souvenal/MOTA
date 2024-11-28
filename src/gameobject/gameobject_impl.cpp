@@ -1,7 +1,7 @@
-#include "gameobject/gameobject.h"
+#include "gameobject/gameobject_impl.h"
 
 // template<typename T, typename... Args>
-// T* GameObject::AddComponent(Args&&... args)
+// T* (GameObject_Impl)::AddComponent(Args&&... args)
 // {
 //     std::type_index type = std::type_index(typeid(T));
 //     T* component = new T(std::forward<Args>(args)...);
@@ -10,18 +10,18 @@
 // }
 
 
-Component* GameObject::GetComponentByType(std::type_index &type)
+Component* GameObject_Impl::GetComponentByType(std::type_index &type)
 {
     auto *component = components[type];
     return dynamic_cast<Component*>(component);
 }
 
-GameObject::GameObject()
+GameObject_Impl::GameObject_Impl()
 {
     transform = AddComponent<Transform>();
 }
 
-GameObject::~GameObject()
+GameObject_Impl::~GameObject_Impl()
 {
     for (auto &pair : components)
         delete pair.second;

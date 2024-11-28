@@ -1,7 +1,7 @@
 #ifndef TRANSFORM_H
 #define TRANSFORM_H
 
-#include "component/component.h"
+#include "component/component.hpp"
 #include "vector2d.h"
 
 class Transform : public Component
@@ -14,7 +14,7 @@ public:
     Vector2D scale = Vector2D(1.0, 1.0);
 
 public:
-    Transform(GameObject_Interface *owner);
+    Transform(GameObject *owner);
 
     void Translate(const Vector2D &movement);
 };

@@ -10,10 +10,10 @@
 
 // forward declaration
 class Component;
-class GameObject_Interface;
+class GameObject;
 
 class ComponentFactory {
-    using Creator = std::function<Component*(GameObject_Interface*, std::vector<std::any>&)>;
+    using Creator = std::function<Component*(GameObject*, std::vector<std::any>&)>;
 
     // 用于存储类型索引到创建函数的映射
     std::unordered_map<std::type_index, Creator> creators;
@@ -31,37 +31,36 @@ public:
 
     // 创建组件实例，支持完美参数转发
     template <typename T, typename... Args>
-    T* Create(GameObject_Interface* owner, Args&&... args);
+    T* Create(GameObject* owner, Args&&... args);
 
 private:
     // 从 void* 参数列表中提取真实参数，并调用组件构造函数
     template <typename T, typename... Args, size_t... Is>
-    static T* InvokeConstructor(GameObject_Interface* owner, std::vector<std::any>& args, std::index_sequence<Is...>
+    static T* InvokeConstructor(GameObject* owner, std::vector<std::any>& args, std::index_sequence<Is...>
     );
 
     // 工厂内部通用创建函数，支持从参数列表调用组件构造函数
     template <typename T, typename... Args>
-    static T* CreateFromArgs(GameObject_Interface* owner, std::vector<std::any>& args);
+    static T* CreateFromArgs(GameObject* owner, std::vector<std::any>& args);
 };
 
 template <typename T, typename... Args>
 void ComponentFactory::RegisterComponent()
 {
     std::type_index type = std::type_index(typeid(T));
-    creators[type] = [](GameObject_Interface* owner, std::vector<std::any> &args) -> Component*
+    creators[type] = [](GameObject* owner, std::vector<std::any> &args) -> Component*
     {
         return CreateFromArgs<T, Args...>(owner, args);
     };
 }
 
 template <typename T, typename... Args>
-T* ComponentFactory::Create(GameObject_Interface* owner, Args&&... args)
+T* ComponentFactory::Create(GameObject* owner, Args&&... args)
 {
     std::type_index type = std::type_index(typeid(T));
     auto it = creators.find(type);
     if (it != creators.end()) {
         std::vector<std::any> argList = {std::any(std::forward<Args>(args))...};
-        // return dynamic_cast<T *>(it->second(owner, std::forward<Args>(args)...));
         return dynamic_cast<T*>(it->second(owner, argList));
     }
     return nullptr;
@@ -71,7 +70,7 @@ T* ComponentFactory::Create(GameObject_Interface* owner, Args&&... args)
 
 // 从 void* 参数列表中提取真实参数，并调用组件构造函数
 template <typename T, typename... Args, size_t... Is>
-T* ComponentFactory::InvokeConstructor(GameObject_Interface *owner, std::vector<std::any> &args, std::index_sequence<Is...>)
+T* ComponentFactory::InvokeConstructor(GameObject *owner, std::vector<std::any> &args, std::index_sequence<Is...>)
 {
     return new T(owner, std::any_cast<Args>(args[Is])...);
     // qDebug() << "Argument size: " << args.size();
@@ -80,7 +79,7 @@ T* ComponentFactory::InvokeConstructor(GameObject_Interface *owner, std::vector<
 
 // 工厂内部通用创建函数，支持从参数列表调用组件构造函数
 template <typename T, typename... Args>
-T* ComponentFactory::CreateFromArgs(GameObject_Interface* owner, std::vector<std::any>& args)
+T* ComponentFactory::CreateFromArgs(GameObject* owner, std::vector<std::any>& args)
 {
     return InvokeConstructor<T, Args...>(
         owner, args, std::index_sequence_for<Args...>{});
