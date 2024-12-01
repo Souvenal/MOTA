@@ -5,7 +5,7 @@
 #include <QTimer>
 
 #include "global.h"
-#include "timemanager.h"
+#include "module/timemanager.h"
 #include "map.h"
 
 
@@ -16,6 +16,9 @@ private:
     TimeManager *timeManager;
     QTimer *builtInTimer;
 
+    QTimer *frameUpdateTimer;
+    QTimer *fixedUpdateTimer;
+
     Input *input;
 
     Scene *scene;
@@ -24,8 +27,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-public slots:
-    void Control();
+private slots:
+    void Update();
+    void FixedUpdate();
     void Render();
 
 protected:

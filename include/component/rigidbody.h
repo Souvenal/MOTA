@@ -8,11 +8,10 @@ class RigidBody : public Component
 {
     BAN_DEFAULT_CONSTURCTOR(RigidBody)
 
-protected:
-    Vector2D velocity;
-
 public:
     RigidBody(GameObject *owner);
+
+    Vector2D velocity;
 };
 
 #endif // RIGIDBODY_H

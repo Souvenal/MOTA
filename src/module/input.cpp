@@ -1,8 +1,8 @@
-#include "input.h"
+#include "module/input.h"
 
-std::unordered_map<Qt::Key, Input::State> Input::keyState = std::unordered_map<Qt::Key, Input::State>();
-std::vector<Qt::Key> Input::occupied = std::vector<Qt::Key>();
-std::vector<Qt::Key> Input::toRemove = std::vector<Qt::Key>();
+std::unordered_map<Qt::Key, Input::State> Input::keyState;
+std::vector<Qt::Key> Input::occupied;
+std::vector<Qt::Key> Input::toRemove;
 
 void Input::Update()
 {

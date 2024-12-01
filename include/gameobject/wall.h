@@ -2,13 +2,13 @@
 #define WALL_H
 
 #include "gameobject/gameobject_impl.h"
-#include "component/collider.h"
+#include "component/boxcollider.h"
 #include "component/svgrenderer.h"
 
 class Wall : public GameObject_Impl
 {
 protected:
-    Collider *collider;
+    BoxCollider *boxCollider;
     SvgRenderer *svgRenderer;
 
 public:

@@ -20,6 +20,7 @@ class Component
 protected:
     GameObject *owner;
 
+public:
     template <typename T>
     T* GetComponent()
     {
@@ -27,7 +28,6 @@ protected:
     }
 
 public:
-
     Component(GameObject *owner):
         owner(owner)
     {}

@@ -12,6 +12,7 @@ void RegisterAllComponents() {
 
     factory.RegisterComponent<Transform>();
     factory.RegisterComponent<BoxCollider>();
+    factory.RegisterComponent<RigidBody>();
     factory.RegisterComponent<SvgRenderer, QString>();
 }
 

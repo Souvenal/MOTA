@@ -1,6 +1,9 @@
 # MOTA
 
-Unity-like 2D game engine built with c++ along with a mini game MOTA.
+Unity-like 2D game engine built with c++ and Qt.
+
+Along with a mini game MOTA as demo.
+
 ## 输入处理
 
 ## 物理模拟 (FixedUpdate)
