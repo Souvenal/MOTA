@@ -7,6 +7,8 @@
 
 #include "gameobject/tile/tiles.h"
 
+#include "gameobject/ui/uis.h"
+
 #include "gameobject/warrior.h"
 
 #endif // GAMEOBJECTS_H

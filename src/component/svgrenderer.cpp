@@ -16,6 +16,9 @@ SvgRenderer::~SvgRenderer()
 // default render
 void SvgRenderer::Render(QPainter *painter) const
 {
+    if (!IsActive() || !painter)
+        return;
+
     renderer->render(
         painter,
         Cordinate::GetRect(transform->position)

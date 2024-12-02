@@ -1,10 +1,16 @@
 #ifndef LAVA_H
 #define LAVA_H
 
-class Lava
+#include "gameobject/tile/tile.h"
+
+class Lava : public Tile
 {
 public:
-    Lava();
+    Lava(const Vector2D &position, const std::string &name, GameObject* parent = nullptr);
+
+protected:
+    BoxCollider *collider;
+    SvgRenderer *renderer;
 };
 
 #endif // LAVA_H

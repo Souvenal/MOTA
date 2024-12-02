@@ -3,5 +3,17 @@
         <file>images/brick-wall.svg</file>
         <file>images/swordman.svg</file>
         <file>images/slime.svg</file>
+        <file>images/armor.svg</file>
+        <file>images/bat.svg</file>
+        <file>images/cultist.svg</file>
+        <file>images/diablo-skull.svg</file>
+        <file>images/dungeon-gate.svg</file>
+        <file>images/key.svg</file>
+        <file>images/lava.svg</file>
+        <file>images/locked-door.svg</file>
+        <file>images/mineral-heart.svg</file>
+        <file>images/potion-ball.svg</file>
+        <file>images/skeleton.svg</file>
+        <file>images/sword-altar.svg</file>
     </qresource>
 </RCC>

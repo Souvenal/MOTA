@@ -10,6 +10,15 @@ void Stats::TakeDamage(int damage)
         Die();
 }
 
+void Stats::TakeRealDamage(int damage)
+{
+    currentHealth -= damage;
+    qDebug() << "took " << damage << "real damage";
+
+    if (currentHealth <= 0)
+        Die();
+}
+
 void Stats::Die()
 {
     qDebug() << "die";

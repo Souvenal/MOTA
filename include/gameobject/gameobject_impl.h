@@ -11,17 +11,14 @@
 class GameObject_Impl : public GameObject
 {
 public:
+    explicit GameObject_Impl(const std::string &name, GameObject* parent);
+    ~GameObject_Impl();
 
     void SetActive(bool isActive) override;
-    bool IsActive() override;
 
     void Start() override;
     void Update() override;
     void FixedUpdate() override;
-
-
-    GameObject_Impl();
-    ~GameObject_Impl();
 
 public:
 

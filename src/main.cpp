@@ -19,6 +19,7 @@ void RegisterAllComponents() {
     factory.RegisterComponent<SvgRenderer, QString>();
 
     factory.RegisterComponent<Stats, int, int, int>();
+    factory.RegisterComponent<WarriorStats, int, int, int, int>();
 }
 
 

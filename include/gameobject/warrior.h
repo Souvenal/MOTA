@@ -1,8 +1,9 @@
 #ifndef WARRIOR_H
 #define WARRIOR_H
 
-#include "gameobject/gameobject_impl.h"
 #include "component/components.h"
+#include "gameobject/gameobject_impl.h"
+#include "gameobject/ui/uitext.h"
 
 class Warrior : public GameObject_Impl
 {
@@ -13,10 +14,10 @@ protected:
 
     SvgRenderer *svgRenderer;
 
-    Stats *stats;
+    WarriorStats *stats;
 
 public:
-    Warrior(const Vector2D &position = Vector2D(0, 0));
+    Warrior(const Vector2D &position, const std::string &name, GameObject *parent = nullptr);
 
     void FixedUpdate() override;
     void Update() override;

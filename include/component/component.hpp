@@ -30,7 +30,7 @@ public:
     }
 
     void SetActive(bool isActive) { this->isActive = isActive; }
-    bool IsActive() { return this->isActive; }
+    bool IsActive() const { return this->isActive; }
 
 public:
     Component(GameObject *owner):

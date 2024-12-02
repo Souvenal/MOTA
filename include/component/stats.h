@@ -17,6 +17,8 @@ public:
 
     void TakeDamage(int damage);
 
+    void TakeRealDamage(int damage);
+
     void Die();
 
     Stats(GameObject *owner, int health, int attack, int defence);

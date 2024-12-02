@@ -6,11 +6,8 @@
 
 class Tile : public GameObject_Impl
 {
-protected:
-    SvgRenderer *renderer;
-
 public:
-    Tile();
+    Tile(const Vector2D &position, const std::string &name, GameObject* parent = nullptr);
 };
 
 #endif // TILE_H

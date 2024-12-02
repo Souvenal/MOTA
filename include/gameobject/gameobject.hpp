@@ -11,29 +11,47 @@ class Component;
 // interface class
 class GameObject
 {
-protected:
-    std::unordered_map<std::type_index, Component *> components;
-
-    virtual Component* GetComponentByType(std::type_index &type) = 0;
-
-    bool isActive;
-
 public:
+    explicit GameObject(const std::string &name, GameObject *parent = nullptr):
+        name(name), parent(parent), isActive(true)
+    {}
+    virtual ~GameObject() {}
+
+    virtual void AddChild(const std::string &name, GameObject* child)
+    {
+        children[name] = child;
+    }
+    virtual void RemoveChild(const std::string &name)
+    {
+        children.erase(name);
+    }
+
     template<typename T, typename... Args>
-    T* AddComponent(Args&&... args);
+    T* AddComponent(Args&&... args); // deal with components
 
     template<typename T>
-    T* GetComponent();
+    T* GetComponent(); // deal with components
 
-    virtual void SetActive(bool isActive) = 0;
-    virtual bool IsActive() = 0;
+    virtual void SetActive(bool isActive) = 0; // deal with gameobjects
+    virtual bool IsActive() const { return isActive; }
 
     virtual void Start() = 0;
     virtual void Update() = 0;
     virtual void FixedUpdate() = 0;
 
-    GameObject() = default;
-    virtual ~GameObject() {}
+public:
+    std::string name;
+
+    GameObject* parent;
+
+protected:
+    std::unordered_map<std::string, GameObject *> children;
+
+    std::unordered_map<std::type_index, Component *> components;
+
+    virtual Component* GetComponentByType(std::type_index &type) = 0;
+
+    bool isActive;
 };
 
 

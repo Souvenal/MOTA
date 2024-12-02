@@ -1,17 +1,15 @@
 #include "module/scene.h"
 
+
 void Scene::AddGameObject(GameObject *gameObject)
 {
     gameObjects.emplace_back(gameObject);
 
-    RigidBody *rb = gameObject->GetComponent<RigidBody>();
-    BoxCollider *collider = gameObject->GetComponent<BoxCollider>();
-    if (rb || collider)
-        physicsObjects.emplace_back(gameObject);
+    CollectUIObjects(gameObject);
 
-    SvgRenderer *renderer = gameObject->GetComponent<SvgRenderer>();
-    if (renderer)
-        renderers.emplace_back(renderer);
+    CollectPhysicsObjects(gameObject);
+
+    CollectRenderers(gameObject);
 }
 
 void Scene::RemoveGameobject(GameObject *gameObject)
@@ -44,7 +42,13 @@ void Scene::FixedUpdate()
 
 void Scene::Render(QPainter *painter)
 {
+    // render gameobjects
     renderSystem.Render(renderers, painter);
+
+    // render uiobjects
+    for (const auto &uiObject : uiObjects) {
+        uiObject->Render(painter);
+    }
 }
 
 Scene::Scene()
@@ -54,6 +58,38 @@ Scene::Scene()
 
 Scene::~Scene()
 {
-    for (auto &gameObject : gameObjects)
+    for (auto &gameObject : gameObjects) {
         delete gameObject;
+        gameObject = nullptr;
+    }
+}
+
+void Scene::CollectPhysicsObjects(GameObject *gameObject)
+{
+    RigidBody *rb = gameObject->GetComponent<RigidBody>();
+    BoxCollider *collider = gameObject->GetComponent<BoxCollider>();
+    if (rb || collider)
+        physicsObjects.emplace_back(gameObject);
+}
+
+void Scene::CollectUIObjects(GameObject *gameObject)
+{
+    UIObject* uiObject = dynamic_cast<UIObject*>(gameObject);
+    if (uiObject) {
+        uiObjects.emplace_back(uiObject);
+    }
+}
+
+void Scene::CollectRenderers(GameObject *gameObject)
+{
+    SvgRenderer *svgRenderer = gameObject->GetComponent<SvgRenderer>();
+    if (svgRenderer) {
+        renderers.emplace_back(svgRenderer);
+        return;
+    }
+    CanvasRenderer *canvasRenderer = gameObject->GetComponent<CanvasRenderer>();
+    if (canvasRenderer) {
+        renderers.emplace_back(canvasRenderer);
+        return;
+    }
 }
