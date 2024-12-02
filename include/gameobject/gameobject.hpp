@@ -14,14 +14,19 @@ class GameObject
 protected:
     std::unordered_map<std::type_index, Component *> components;
 
+    virtual Component* GetComponentByType(std::type_index &type) = 0;
+
+    bool isActive;
+
 public:
     template<typename T, typename... Args>
     T* AddComponent(Args&&... args);
 
-    virtual Component* GetComponentByType(std::type_index &type) = 0;
-
     template<typename T>
     T* GetComponent();
+
+    virtual void SetActive(bool isActive) = 0;
+    virtual bool IsActive() = 0;
 
     virtual void Start() = 0;
     virtual void Update() = 0;

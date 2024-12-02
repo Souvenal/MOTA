@@ -55,6 +55,7 @@ void MainWindow::Update()
 
 void MainWindow::FixedUpdate()
 {
+    input->Update();
     scene->FixedUpdate();
 }
 

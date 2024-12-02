@@ -20,12 +20,17 @@ class Component
 protected:
     GameObject *owner;
 
+    bool isActive = true;
+
 public:
     template <typename T>
     T* GetComponent()
     {
         return owner->GetComponent<T>();
     }
+
+    void SetActive(bool isActive) { this->isActive = isActive; }
+    bool IsActive() { return this->isActive; }
 
 public:
     Component(GameObject *owner):

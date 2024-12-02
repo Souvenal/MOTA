@@ -11,9 +11,14 @@ void RegisterAllComponents() {
     ComponentFactory &factory = ComponentFactory::GetComponentFactory();
 
     factory.RegisterComponent<Transform>();
+
     factory.RegisterComponent<BoxCollider>();
+
     factory.RegisterComponent<RigidBody>();
+
     factory.RegisterComponent<SvgRenderer, QString>();
+
+    factory.RegisterComponent<Stats, int, int, int>();
 }
 
 

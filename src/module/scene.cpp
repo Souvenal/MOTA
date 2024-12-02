@@ -16,6 +16,7 @@ void Scene::AddGameObject(GameObject *gameObject)
 
 void Scene::RemoveGameobject(GameObject *gameObject)
 {
+    // Destroy
     gameObjects.erase(
         std::remove(gameObjects.begin(), gameObjects.end(), gameObject),
         gameObjects.end()
@@ -30,7 +31,8 @@ void Scene::RemoveGameobject(GameObject *gameObject)
 void Scene::Update()
 {
     for (const auto &gameObject : gameObjects) {
-        gameObject->Update();
+        if (gameObject->IsActive())
+            gameObject->Update();
     }
 }
 

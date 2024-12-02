@@ -1,4 +1,4 @@
-#include "gameobject/wall.h"
+#include "gameobject/tile/wall.h"
 
 Wall::Wall(const Vector2D &position)
 {

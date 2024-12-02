@@ -5,6 +5,7 @@ RenderSystem::RenderSystem() {}
 void RenderSystem::Render(std::vector<Renderer *> renderers, QPainter *painter)
 {
     for (auto &renderer : renderers) {
-        renderer->Render(painter);
+        if (renderer->IsActive())
+            renderer->Render(painter);
     }
 }

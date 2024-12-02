@@ -9,5 +9,7 @@
 
 #include "component/rigidbody.h"
 
+#include "component/stats.h"
+
 
 #endif // COMPONENTS_H

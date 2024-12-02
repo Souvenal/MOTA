@@ -1,7 +1,6 @@
 #include "global.h"
 #include "module/scene.h"
-#include "gameobject/wall.h"
-#include "gameobject/warrior.h"
+#include "gameobject/gameobjects.h"
 
 Scene* CreateMap1()
 {

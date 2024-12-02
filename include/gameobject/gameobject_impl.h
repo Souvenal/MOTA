@@ -10,21 +10,26 @@
 
 class GameObject_Impl : public GameObject
 {
-private:
-    Component* GetComponentByType(std::type_index &type) override;
-
 public:
-    GameObject_Impl();
+
+    void SetActive(bool isActive) override;
+    bool IsActive() override;
 
     void Start() override;
     void Update() override;
     void FixedUpdate() override;
 
+
+    GameObject_Impl();
     ~GameObject_Impl();
 
 public:
+
     Transform *transform;
 
+private:
+
+    Component* GetComponentByType(std::type_index &type) override;
 };
 
 #endif // GAMEOBJECT_H
