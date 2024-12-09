@@ -6,6 +6,7 @@
 
 #include "global.h"
 #include "module/timemanager.h"
+#include "module/scenemanager.h"
 #include "map.h"
 
 
@@ -21,7 +22,8 @@ private:
 
     Input *input;
 
-    Scene *scene;
+    // Scene *scene;
+    SceneManager &sceneManager;
 
 public:
     MainWindow(QWidget *parent = nullptr);

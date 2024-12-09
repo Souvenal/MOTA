@@ -3,7 +3,7 @@
 
 #include "gameobject/tile/tile.h"
 
-#include "gameobject/warrior.h"
+#include "gameobject/character/warrior.h"
 
 class Lava : public Tile
 {
@@ -14,7 +14,7 @@ private:
     SvgRenderer *renderer;
 
 public:
-    Lava(const Vector2D &position, const std::string &name, GameObject* parent = nullptr);
+    Lava(const Vector2D &position, const std::string &name = "Lava", GameObject* parent = nullptr);
 
 protected:
     void OnTriggerEnter(Collider *other) override;

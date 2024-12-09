@@ -1,11 +1,15 @@
 #ifndef BATTLEMANAGER_H
 #define BATTLEMANAGER_H
 
-#include "gameobject/character.h"
+#include "gameobject/character/character.h"
 
 class BattleManager : public GameObject_Impl
 {
     static BattleManager *battleManager;
+
+    int turn;
+
+    bool inBattle;
 
 public:
     BattleManager(const std::string &name = "BattleManager", GameObject *parent = nullptr);

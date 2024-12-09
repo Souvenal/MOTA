@@ -1,4 +1,4 @@
-#include "gameobject/monster/monster.h"
+#include "gameobject/character/monster.h"
 
 Monster::Monster(const Vector2D &position, const std::string &name, GameObject *parent):
     Character(name, parent)
@@ -8,7 +8,7 @@ Monster::Monster(const Vector2D &position, const std::string &name, GameObject *
     transform->position = position;
 }
 
-void Monster::Attack(Character *other)
+void Monster::Attack(Character *other, int turn)
 {
     if (!other->CompareTag("Player"))
         return;

@@ -1,7 +1,7 @@
 #ifndef SLIME_H
 #define SLIME_H
 
-#include "gameobject/monster/monster.h"
+#include "gameobject/character/monster.h"
 
 class Slime : public Monster
 {

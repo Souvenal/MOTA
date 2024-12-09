@@ -3,7 +3,7 @@
 
 #include "gameobject/gameobject_impl.h"
 
-#include "gameobject/warrior.h"
+#include "gameobject/character/warrior.h"
 
 class Item : public GameObject_Impl
 {

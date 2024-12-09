@@ -3,13 +3,14 @@
 
 #include "gameobject/item/items.h"
 
-#include "gameobject/monster/monsters.h"
-
 #include "gameobject/tile/tiles.h"
 
 #include "gameobject/ui/uis.h"
 
-#include "gameobject/warrior.h"
+
+#include "gameobject/character/monsters.h"
+#include "gameobject/character/warrior.h"
+
 
 #include "gameobject/battlemanager.h"
 

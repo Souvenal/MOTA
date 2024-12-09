@@ -1,24 +1,21 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-#include <QWidget>
-
-#include "component/components.h"
-
 #include "gameobject/gameobject.hpp"
 #include "gameobject/ui/uiobject.h"
-
-#include "module/physicssystem.h"
-#include "module/rendersystem.h"
+#include "gameobject/character/warrior.h"
 
 class Scene : public QObject
 {
     Q_OBJECT
 
+    friend class SceneManager;
+
 public:
 
     void AddGameObject(GameObject *gameObject);
     void RemoveGameobject(GameObject *gameObject);
+    GameObject* Find(const std::string &name) const;
 
     void Update();
     void FixedUpdate();
@@ -29,16 +26,10 @@ public:
 
 private:
 
-    PhysicsSystem physicsSystem;
-
-    RenderSystem renderSystem;
-
     std::vector<GameObject*> gameObjects;
     std::vector<UIObject*> uiObjects;
     std::vector<GameObject*> physicsObjects; // transmit to physics system
     std::vector<Renderer*> renderers; // transmit to render system
-
-    QWidget *widget;
 
 private:
 

@@ -2,24 +2,11 @@
 
 #include <QPainter>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+MainWindow::MainWindow(QWidget *parent):
+    QMainWindow(parent),
+    sceneManager(SceneManager::GetSceneManager())
 {
     resize(WINDOW_SIZE_W, WINDOW_SIZE_H);
-
-    // timeManager = new TimeManager;
-    // timeManager->setTargetTime(30);
-    // builtInTimer = new QTimer;
-    // builtInTimer->start(0); // timeout every event loop
-
-    // connect(builtInTimer, &QTimer::timeout,
-    //         timeManager, &TimeManager::update);
-
-    // connect(builtInTimer, &QTimer::timeout,
-    //         this, &MainWindow::Control);
-
-    // connect(timeManager, &TimeManager::timeout,
-    //         this, &MainWindow::Render);
 
     frameUpdateTimer = new QTimer;
     frameUpdateTimer->setInterval(1000 / FRAME_RATE);
@@ -34,7 +21,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     input = new Input();
 
-    scene = CreateMap1();
+    // scene = CreateMap1();
+    sceneManager.RegisterScene("Level1", CreateLevel1());
+    sceneManager.RegisterScene("Level2", CreateLevel2());
+
+    sceneManager.SwitchScene("Level1");
 }
 
 MainWindow::~MainWindow()
@@ -44,19 +35,19 @@ MainWindow::~MainWindow()
 
     delete input;
 
-    delete scene;
+    // delete scene;
 }
 
 void MainWindow::Update()
 {
     input->Update();
-    scene->Update();
+    sceneManager.Update();
 }
 
 void MainWindow::FixedUpdate()
 {
     input->Update();
-    scene->FixedUpdate();
+    sceneManager.FixedUpdate();
 }
 
 void MainWindow::Render()
@@ -70,7 +61,7 @@ void MainWindow::paintEvent(QPaintEvent *event) {
     // qDebug() << "frame: " << ++counter;
 
     QPainter painter(this);
-    scene->Render(&painter);
+    sceneManager.Render(&painter);
 
     QMainWindow::paintEvent(event);
 }

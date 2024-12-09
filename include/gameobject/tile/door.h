@@ -3,12 +3,12 @@
 
 #include "gameobject/tile/tile.h"
 
-#include "gameobject/warrior.h"
+#include "gameobject/character/warrior.h"
 
 class Door : public Tile
 {
 public:
-    Door(const Vector2D &position, const std::string &name, GameObject* parent = nullptr);
+    Door(const Vector2D &position, const std::string &name = "Door", GameObject* parent = nullptr);
 
 protected:
     BoxCollider *boxCollider;

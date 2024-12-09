@@ -3,6 +3,8 @@
 
 #include "module/scene.h"
 
-extern Scene* CreateMap1();
+extern Scene* CreateLevel1();
+
+extern Scene* CreateLevel2();
 
 #endif // MAP_H

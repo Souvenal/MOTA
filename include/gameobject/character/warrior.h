@@ -1,26 +1,26 @@
 #ifndef WARRIOR_H
 #define WARRIOR_H
 
-#include "gameobject/character.h"
+#include "gameobject/character/character.h"
 #include "gameobject/ui/uitext.h"
 #include "gameobject/battlemanager.h"
+#include "gameobject/playerdatamanager.h"
 
 class Warrior : public Character
 {
 public:
 
-    int currentCoins;
     int currentKeys;
-
-    bool debuff;
 
 public:
     Warrior(const Vector2D &position, const std::string &name = "Warrior", GameObject *parent = nullptr);
 
-    void AddCoins(int coins);
     void AddKeys(int keys);
 
-    void Attack(Character *other) override;
+    void Attack(Character *other, int turn) override;
+
+    void StoreProperty();
+    void RestoreProperty();
 
     void FixedUpdate() override;
     void Update() override;

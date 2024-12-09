@@ -26,28 +26,21 @@ void Scene::RemoveGameobject(GameObject *gameObject)
     delete gameObject;
 }
 
+GameObject* Scene::Find(const std::string &name) const
+{
+    for (GameObject* gameobject : gameObjects) {
+        if (gameobject->name == name)
+            return gameobject;
+    }
+
+    return nullptr;
+}
+
 void Scene::Update()
 {
     for (const auto &gameObject : gameObjects) {
         if (gameObject->IsActive())
             gameObject->Update();
-    }
-}
-
-void Scene::FixedUpdate()
-{
-    // qDebug() << "Fixed update";
-    physicsSystem.FixedUpdate(physicsObjects);
-}
-
-void Scene::Render(QPainter *painter)
-{
-    // render gameobjects
-    renderSystem.Render(renderers, painter);
-
-    // render uiobjects
-    for (const auto &uiObject : uiObjects) {
-        uiObject->Render(painter);
     }
 }
 

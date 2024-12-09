@@ -1,4 +1,4 @@
-#include "gameobject/monster/demon.h"
+#include "gameobject/character/demon.h"
 
 Demon::Demon(const Vector2D &position, const std::string &name, GameObject *parent):
     Monster(position, name, parent)

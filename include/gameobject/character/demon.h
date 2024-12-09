@@ -1,7 +1,7 @@
 #ifndef DEMON_H
 #define DEMON_H
 
-#include "gameobject/monster/monster.h"
+#include "gameobject/character/monster.h"
 
 class Demon : public Monster
 {
