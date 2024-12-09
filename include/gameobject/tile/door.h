@@ -3,6 +3,8 @@
 
 #include "gameobject/tile/tile.h"
 
+#include "gameobject/warrior.h"
+
 class Door : public Tile
 {
 public:
@@ -11,6 +13,9 @@ public:
 protected:
     BoxCollider *boxCollider;
     SvgRenderer *svgRenderer;
+
+protected:
+    void OnCollisionEnter(Collider *other) override;
 };
 
 #endif // DOOR_H

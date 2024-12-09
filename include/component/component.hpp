@@ -17,12 +17,14 @@ class Component
 {
     BAN_DEFAULT_CONSTURCTOR(Component)
 
-protected:
-    GameObject *owner;
-
-    bool isActive = true;
 
 public:
+    Component(GameObject *owner):
+        owner(owner)
+    {}
+
+    virtual ~Component() = default;
+
     template <typename T>
     T* GetComponent()
     {
@@ -32,12 +34,13 @@ public:
     void SetActive(bool isActive) { this->isActive = isActive; }
     bool IsActive() const { return this->isActive; }
 
-public:
-    Component(GameObject *owner):
-        owner(owner)
-    {}
+    bool CompareTag(const std::string &tag) const { return owner->CompareTag(tag); }
 
-    virtual ~Component() = default;
+    GameObject* GetOwner() const { return owner; }
+protected:
+    GameObject *owner;
+
+    bool isActive = true;
 };
 
 

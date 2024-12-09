@@ -11,4 +11,6 @@
 
 #include "gameobject/warrior.h"
 
+#include "gameobject/battlemanager.h"
+
 #endif // GAMEOBJECTS_H

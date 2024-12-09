@@ -1,10 +1,19 @@
 #ifndef ITEM_H
 #define ITEM_H
 
-class Item
+#include "gameobject/gameobject_impl.h"
+
+#include "gameobject/warrior.h"
+
+class Item : public GameObject_Impl
 {
 public:
-    Item();
+    Item(const Vector2D &position, const std::string &name, GameObject *parent = nullptr);
+
+    virtual void OnTriggerEnter(Collider *other) = 0;
+
+protected:
+    Collider *collider;
 };
 
 #endif // ITEM_H

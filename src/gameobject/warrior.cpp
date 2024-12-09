@@ -1,18 +1,33 @@
 #include "gameobject/warrior.h"
 
 Warrior::Warrior(const Vector2D &position, const std::string &name, GameObject *parent)
-    :GameObject_Impl(name, parent)
+    :Character(name, parent)
 {
-    boxCollider = AddComponent<BoxCollider>();
+    SetTag("Player");
 
-    rb = AddComponent<RigidBody>();
+    renderer = AddComponent<SvgRenderer>(QStringLiteral(":/assets/images/swordman.svg"));
 
-    svgRenderer = AddComponent<SvgRenderer>(QStringLiteral(":/assets/images/swordman.svg"));
-
-    stats = AddComponent<WarriorStats>(50, 20, 5, 0);
+    currentHealth = maxHealth = 50;
+    attack = 20;
+    defence = 5;
+    currentCoins = 0;
+    currentKeys = 0;
 
     transform->position = position;
 }
+
+void Warrior::AddCoins(int coins) { currentCoins += coins; }
+
+void Warrior::AddKeys(int keys) { currentKeys += keys; }
+
+void Warrior::Attack(Character *other)
+{
+    if (!other->CompareTag("Monster"))
+        return;
+
+    other->TakeDamage(attack);
+}
+
 
 void Warrior::FixedUpdate()
 {
@@ -36,19 +51,31 @@ void Warrior::Update()
 {
     if (children["AttackText"]) {
         auto text = dynamic_cast<UIText*>(children["AttackText"]);
-        text->SetText(QStringLiteral("Attack: ") + QString::number(stats->attack));
+        text->SetText(QStringLiteral("Attack: ") + QString::number(attack));
     }
     if (children["DefenceText"]) {
         auto text = dynamic_cast<UIText*>(children["DefenceText"]);
-        text->SetText(QStringLiteral("Defence: ") + QString::number(stats->defence));
+        text->SetText(QStringLiteral("Defence: ") + QString::number(defence));
     }
     if (children["HealthText"]) {
         auto text = dynamic_cast<UIText*>(children["HealthText"]);
-        text->SetText(QStringLiteral("Health: ") + QString::number(stats->currentHealth));
+        text->SetText(QStringLiteral("Health: ") + QString::number(currentHealth)
+                      + QStringLiteral("/")+ QString::number(maxHealth));
     }
     if (children["CoinsText"]) {
         auto text = dynamic_cast<UIText*>(children["CoinsText"]);
-        text->SetText(QStringLiteral("Coins: ") + QString::number(stats->currentCoins));
+        text->SetText(QStringLiteral("Coins: ") + QString::number(currentCoins));
     }
     GameObject_Impl::Update();
+}
+
+void Warrior::OnCollisionEnter(Collider *other)
+{
+    if (!other->CompareTag("Monster"))
+        return;
+
+    Character *monster = dynamic_cast<Character*>(other->GetOwner());
+    assert(monster);
+    qDebug() << "attack!";
+    BattleManager::GetBattleManager()->StartBattle(this, monster);
 }

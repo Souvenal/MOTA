@@ -14,14 +14,11 @@ protected:
 
 public:
 
-    bool isTrigger = false;
+    bool isTrigger;
 
     Collider(GameObject *owner);
 
     virtual bool CheckCollision(const Collider *other) const = 0;
-
-    void OnCollisionEnter(const Collider &other);
-    void OnTriggerEnter(const Collider &other);
 };
 
 #endif // COLLIDER_H

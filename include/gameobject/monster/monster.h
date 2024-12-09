@@ -1,10 +1,17 @@
 #ifndef MONSTER_H
 #define MONSTER_H
 
-class Monster
+#include "gameobject/character.h"
+
+class Monster : public Character
 {
 public:
-    Monster();
+    int coins;
+
+public:
+    Monster(const Vector2D &position, const std::string &name, GameObject *parent = nullptr);
+
+    virtual void Attack(Character *other) override;
 };
 
 #endif // MONSTER_H

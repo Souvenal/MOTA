@@ -8,6 +8,8 @@
 
 class Component;
 
+class Collider;
+
 // interface class
 class GameObject
 {
@@ -35,9 +37,15 @@ public:
     virtual void SetActive(bool isActive) = 0; // deal with gameobjects
     virtual bool IsActive() const { return isActive; }
 
+    virtual void SetTag(const std::string &tag) = 0;
+    virtual bool CompareTag(const std::string &tag) const = 0;
+
     virtual void Start() = 0;
     virtual void Update() = 0;
     virtual void FixedUpdate() = 0;
+
+    virtual void OnCollisionEnter(Collider *other) = 0;
+    virtual void OnTriggerEnter(Collider *other) = 0;
 
 public:
     std::string name;
@@ -45,6 +53,8 @@ public:
     GameObject* parent;
 
 protected:
+    std::string tag;
+
     std::unordered_map<std::string, GameObject *> children;
 
     std::unordered_map<std::type_index, Component *> components;

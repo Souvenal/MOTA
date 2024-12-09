@@ -10,8 +10,5 @@
 
 #include "component/rigidbody.h"
 
-#include "component/stats.h"
-#include "component/warriorstats.h"
-
 
 #endif // COMPONENTS_H

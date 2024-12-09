@@ -201,6 +201,10 @@ void PhysicsSystem::FixedUpdate() {
 
 └─> 后处理效果
 
+## Unknown Bugs
+
+- [ ] UIText has 5 unknown components.
+
 Reference[^1]
 
 [^1]: Unity Documentation https://docs.unity.cn/cn/2021.3/ScriptReference/index.html

@@ -20,6 +20,8 @@ private:
 
     void ResolveCollisions();
 
+    void TriggerPhysicsEvents();
+
     void ClearTemporaryData();
 
 private:
@@ -30,9 +32,13 @@ private:
         RigidBody *rb2;
         Collider *collider1;
         Collider *collider2;
+        bool operator== (const CollisionInfo &other);
     };
+    std::vector<CollisionInfo> previousList;
     std::vector<CollisionInfo> collisionList;
 };
 
+
+// bool operator== (PhysicsSystem::CollisionInfo &info1, PhysicsSystem::CollisionInfo &info2);
 
 #endif // PHYSICSSYSTEM_H

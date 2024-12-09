@@ -30,15 +30,21 @@ void GameObject_Impl::SetActive(bool isActive) {
 
     this->isActive = isActive;
 
+
     for (auto &pair : children) {
         GameObject* child = pair.second;
         child->SetActive(isActive);
     }
 
     for (auto &pair : components) {
-        pair.second->SetActive(isActive);
+        Component *component = pair.second;
+        if (component)
+            pair.second->SetActive(isActive);
     }
 }
+
+void GameObject_Impl::SetTag(const std::string &tag) { this->tag = tag; }
+bool GameObject_Impl::CompareTag(const std::string &tag) const { return this->tag == tag; }
 
 void GameObject_Impl::Start() {}
 void GameObject_Impl::Update()
@@ -56,6 +62,20 @@ void GameObject_Impl::FixedUpdate()
         GameObject *child = pair.second;
         child->FixedUpdate();
     }
+}
+
+void GameObject_Impl::OnCollisionEnter(Collider *other)
+{
+    Collider *collider = GetComponent<Collider>();
+    if (!collider || collider->isTrigger)
+        return;
+}
+
+void GameObject_Impl::OnTriggerEnter(Collider *other)
+{
+    Collider *collider = GetComponent<Collider>();
+    if (!collider || !collider->isTrigger)
+        return;
 }
 
 

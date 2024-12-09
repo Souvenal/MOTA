@@ -1,18 +1,7 @@
 #include "component/collider.h"
 
 Collider::Collider(GameObject *owner):
-    Component(owner)
+    Component(owner), isTrigger(false)
 {
     transform = GetComponent<Transform>();
-}
-
-
-void Collider::OnCollisionEnter(const Collider &other)
-{
-
-}
-
-void Collider::OnTriggerEnter(const Collider &other)
-{
-
 }

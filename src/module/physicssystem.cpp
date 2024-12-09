@@ -12,8 +12,8 @@ void PhysicsSystem::FixedUpdate(const std::vector<GameObject*> &physicsObjects)
 
     ResolveCollisions();
 
-    // 6. 后处理
-    // TriggerPhysicsEvents();
+    TriggerPhysicsEvents();
+
     ClearTemporaryData();
 }
 
@@ -67,14 +67,42 @@ void PhysicsSystem::DetectCollisions()
 
 void PhysicsSystem::ResolveCollisions()
 {
+    // call OnCollisionEnter events
     for (auto &info : collisionList) {
-        if (info.rb1) {
+        bool enter = (find(previousList.begin(), previousList.end(), info) == previousList.end());
+        if (enter) {
+            if (info.rb1 && !info.collider2->isTrigger) {
+                info.collider2->GetOwner()->OnCollisionEnter(info.collider1);
+            }
+            if (info.rb2 && !info.collider1->isTrigger) {
+                info.collider1->GetOwner()->OnCollisionEnter(info.collider2);
+            }
+        }
+    }
+
+    for (auto &info : collisionList) {
+        if (info.rb1 && !info.collider2->isTrigger) {
             Transform *transform = info.rb1->GetComponent<Transform>();
             transform->position = transform->position - info.rb1->velocity;
         }
-        if (info.rb2) {
+        if (info.rb2 && !info.collider1->isTrigger) {
             Transform *transform = info.rb2->GetComponent<Transform>();
             transform->position = transform->position - info.rb2->velocity;
+        }
+    }
+}
+
+void PhysicsSystem::TriggerPhysicsEvents()
+{
+    for (auto &info : collisionList) {
+        bool enter = (find(previousList.begin(), previousList.end(), info) == previousList.end());
+        if (enter) {
+            if (info.rb1 && info.collider2->isTrigger) {
+                info.collider2->GetOwner()->OnTriggerEnter(info.collider1);
+            }
+            if (info.rb2 && info.collider1->isTrigger) {
+                info.collider1->GetOwner()->OnTriggerEnter(info.collider2);
+            }
         }
     }
 }
@@ -92,5 +120,12 @@ void PhysicsSystem::ClearTemporaryData()
             rb->velocity = Vector2D(0, 0);
     }
     physicsObjects.clear();
+    previousList = std::move(collisionList);
     collisionList.clear();
+}
+
+bool PhysicsSystem::CollisionInfo::operator== (const CollisionInfo &other)
+{
+    return rb1 == other.rb1 && rb2 == other.rb2
+           && collider1 == other.collider1 && collider2 == other.collider2;
 }

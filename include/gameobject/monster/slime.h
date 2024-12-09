@@ -1,10 +1,15 @@
 #ifndef SLIME_H
 #define SLIME_H
 
-class Slime
+#include "gameobject/monster/monster.h"
+
+class Slime : public Monster
 {
 public:
-    Slime();
+    Slime(const Vector2D &position, const std::string &name = "Slime", GameObject *parent = nullptr);
+
+protected:
+    Renderer *renderer;
 };
 
 #endif // SLIME_H
