@@ -15,11 +15,10 @@ void UIText::Update() {}
 
 void UIText::Render(QPainter *painter) const
 {
-    if (!IsActive() || !painter)
-        return;
+    assert(painter);
 
     painter->setFont(font);
     painter->setPen(color);
     painter->drawText(rect, text, Qt::AlignLeft | Qt::AlignTop);
-    painter->drawRect(rect);
+    // painter->drawRect(rect);
 }

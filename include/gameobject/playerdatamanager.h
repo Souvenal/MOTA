@@ -10,6 +10,8 @@ public:
 
     static PlayerDataManager& GetInstance();
 
+    void Refresh();
+
     int currentHealth;
     int maxHealth;
     int attack;

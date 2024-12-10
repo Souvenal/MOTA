@@ -52,6 +52,8 @@ Scene::Scene()
 Scene::~Scene()
 {
     for (auto &gameObject : gameObjects) {
+        if (dynamic_cast<BattleManager*>(gameObject))
+            continue;
         delete gameObject;
         gameObject = nullptr;
     }

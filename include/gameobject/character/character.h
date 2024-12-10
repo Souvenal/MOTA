@@ -23,15 +23,15 @@ public:
     Character(const std::string &name, GameObject *parent = nullptr);
 
     // @return: the damage dealt
-    int TakeDamage(int damage);
+    virtual int TakeDamage(int damage);
 
     // @return: the damage dealt
-    int TakeRealDamage(int damage);
+    virtual int TakeRealDamage(int damage);
 
     // @return: the health raised
-    int Heal(int healingAmount);
+    virtual int Heal(int healingAmount);
 
-    void Die();
+    virtual void Die();
 
     void RemoveDebuff();
 

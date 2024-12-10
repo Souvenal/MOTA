@@ -10,4 +10,3 @@ Demon::Demon(const Vector2D &position, const std::string &name, GameObject *pare
     defence = 15;
     coins = 100;
 }
-

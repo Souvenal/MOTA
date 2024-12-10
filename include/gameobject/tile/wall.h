@@ -10,7 +10,7 @@ protected:
     SvgRenderer *svgRenderer;
 
 public:
-    Wall(const Vector2D &position, const std::string &name, GameObject *parent = nullptr);
+    Wall(const Vector2D &position, const std::string &name = "Wall", GameObject *parent = nullptr);
 };
 
 #endif // WALL_H

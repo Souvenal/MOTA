@@ -21,11 +21,9 @@ MainWindow::MainWindow(QWidget *parent):
 
     input = new Input();
 
-    // scene = CreateMap1();
-    sceneManager.RegisterScene("Level1", CreateLevel1());
-    sceneManager.RegisterScene("Level2", CreateLevel2());
+    sceneManager.LoadScene();
 
-    sceneManager.SwitchScene("Level1");
+    connect(&sceneManager, &SceneManager::GameOver, this, &MainWindow::GameOver);
 }
 
 MainWindow::~MainWindow()
@@ -51,9 +49,21 @@ void MainWindow::FixedUpdate()
 }
 
 void MainWindow::Render()
-{;
+{
     // rerender the window, by triggering paintEvent
     QMainWindow::update();
+}
+
+void MainWindow::GameOver(int coins)
+{
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("GameOver");
+    msgBox.setText("Total coins: " + QString::number(coins));
+    msgBox.setStandardButtons(QMessageBox::Ok);
+
+    connect(&msgBox, &QMessageBox::accepted, this, &MainWindow::close);
+
+    msgBox.exec();
 }
 
 void MainWindow::paintEvent(QPaintEvent *event) {

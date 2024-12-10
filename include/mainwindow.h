@@ -2,12 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 #include <QTimer>
 
 #include "global.h"
 #include "module/timemanager.h"
 #include "module/scenemanager.h"
-#include "map.h"
 
 
 class MainWindow : public QMainWindow
@@ -33,6 +33,8 @@ private slots:
     void Update();
     void FixedUpdate();
     void Render();
+
+    void GameOver(int coins);
 
 protected:
     void paintEvent(QPaintEvent *event) override;

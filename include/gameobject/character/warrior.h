@@ -6,6 +6,8 @@
 #include "gameobject/battlemanager.h"
 #include "gameobject/playerdatamanager.h"
 
+#include "module/scenemanager.h"
+
 class Warrior : public Character
 {
 public:

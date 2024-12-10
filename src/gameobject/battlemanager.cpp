@@ -8,7 +8,7 @@ BattleManager::BattleManager(const std::string &name, GameObject *parent):
 
 BattleManager* BattleManager::GetBattleManager()
 {
-    if (!battleManager)
+    if (battleManager == nullptr)
         battleManager = new BattleManager;
     return battleManager;
 }
@@ -52,6 +52,9 @@ void BattleManager::Update()
         if (warrior->IsActive()) {
             // warrior win
             warrior->coins += monster->coins;
+
+            if (monster->name == "Demon")
+                emit GameOver(warrior->coins);
         }
         else if (monster->IsActive()) {
             // monster win
@@ -77,6 +80,11 @@ void BattleManager::EndBattle()
     if (monster)
         monster->inBattle = false;
 
+    SetDefault();
+}
+
+void BattleManager::SetDefault()
+{
     warrior = nullptr;
     monster = nullptr;
 

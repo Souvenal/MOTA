@@ -1,10 +1,14 @@
 #ifndef BATTLEMANAGER_H
 #define BATTLEMANAGER_H
 
+#include <QObject>
+
 #include "gameobject/character/character.h"
 
-class BattleManager : public GameObject_Impl
+class BattleManager : public QObject, public GameObject_Impl
 {
+    Q_OBJECT
+
     static BattleManager *battleManager;
 
     int turn;
@@ -18,6 +22,8 @@ public:
 
     void StartBattle(Character *warrior, Character *monster);
 
+    void SetDefault();
+
     void Update() override;
 
 private:
@@ -29,6 +35,9 @@ private:
     void WarriorAttack();
     void MonsterAttack();
     void EndBattle();
+
+signals:
+    void GameOver(int coins);
 };
 
 #endif // BATTLEMANAGER_H

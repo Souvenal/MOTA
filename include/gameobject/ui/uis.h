@@ -3,4 +3,6 @@
 
 #include "gameobject/ui/uitext.h"
 
+#include "gameobject/ui/manual.h"
+
 #endif // UIS_H

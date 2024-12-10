@@ -3,7 +3,7 @@
 
 #include "gameobject/gameobject.hpp"
 #include "gameobject/ui/uiobject.h"
-#include "gameobject/character/warrior.h"
+#include "gameobject/battlemanager.h"
 
 class Scene : public QObject
 {

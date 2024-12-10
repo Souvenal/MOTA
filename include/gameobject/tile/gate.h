@@ -21,7 +21,7 @@ protected:
     void SetTarget(const std::string &target);
 
 protected:
-    void OnTriggerEnter(Collider *other) override;
+    void OnCollisionEnter(Collider *other) override;
 
 private:
     void LoadTargetScene();
